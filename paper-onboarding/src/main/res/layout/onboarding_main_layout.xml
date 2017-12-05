@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="105dp"
         android:animateLayoutChanges="true"
         android:clipChildren="false">
 
@@ -58,10 +58,9 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="90dp"
         android:baselineAligned="false"
         android:gravity="center_vertical"
         android:orientation="horizontal" />
-
 
 </RelativeLayout>
