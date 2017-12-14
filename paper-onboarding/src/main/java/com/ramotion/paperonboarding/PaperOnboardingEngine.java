@@ -342,7 +342,7 @@ public class PaperOnboardingEngine implements PaperOnboardingEngineDefaults {
         Animator currentContentFadeOut = ObjectAnimator.ofFloat(currentContentIcon, "alpha", 1, 0);
         currentContentFadeOut.setDuration(ANIM_CONTENT_ICON_HIDE_TIME);
 
-        animations.playTogether(currentContentMoveUp, currentContentFadeOut);
+        animations.playTogether( currentContentFadeOut);
 
         Animator newContentMoveUp = ObjectAnimator.ofFloat(newContentIcon, "y", positionDeltaPx, 0);
         newContentMoveUp.setDuration(ANIM_CONTENT_ICON_SHOW_TIME);
@@ -350,7 +350,7 @@ public class PaperOnboardingEngine implements PaperOnboardingEngineDefaults {
         Animator newContentFadeIn = ObjectAnimator.ofFloat(newContentIcon, "alpha", 0, 1);
         newContentFadeIn.setDuration(ANIM_CONTENT_ICON_SHOW_TIME);
 
-        animations.playTogether(newContentMoveUp, newContentFadeIn);
+        animations.playTogether( newContentFadeIn);
 
         animations.setInterpolator(new DecelerateInterpolator());
 
