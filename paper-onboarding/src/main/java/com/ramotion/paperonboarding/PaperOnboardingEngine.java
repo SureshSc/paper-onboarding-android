@@ -333,16 +333,11 @@ public class PaperOnboardingEngine implements PaperOnboardingEngineDefaults {
         Animator currentContentMoveUp = ObjectAnimator.ofFloat(currentContentIcon, "y", 0, -positionDeltaPx);
         currentContentMoveUp.setDuration(ANIM_CONTENT_ICON_HIDE_TIME);
 
-        currentContentMoveUp.addListener(new AnimatorEndListener() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                mContentIconContainer.removeView(currentContentIcon);
-            }
-        });
         Animator currentContentFadeOut = ObjectAnimator.ofFloat(currentContentIcon, "alpha", 1, 0);
         currentContentFadeOut.setDuration(ANIM_CONTENT_ICON_HIDE_TIME);
 
-        animations.playTogether( currentContentFadeOut);
+        animations.playTogether(currentContentFadeOut);
+        mContentIconContainer.removeView(currentContentIcon);
 
         Animator newContentMoveUp = ObjectAnimator.ofFloat(newContentIcon, "y", positionDeltaPx, 0);
         newContentMoveUp.setDuration(ANIM_CONTENT_ICON_SHOW_TIME);
@@ -350,7 +345,7 @@ public class PaperOnboardingEngine implements PaperOnboardingEngineDefaults {
         Animator newContentFadeIn = ObjectAnimator.ofFloat(newContentIcon, "alpha", 0, 1);
         newContentFadeIn.setDuration(ANIM_CONTENT_ICON_SHOW_TIME);
 
-        animations.playTogether( newContentFadeIn);
+        animations.playTogether(newContentFadeIn);
 
         animations.setInterpolator(new DecelerateInterpolator());
 
